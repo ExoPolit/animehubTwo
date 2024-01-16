@@ -7,6 +7,7 @@ import RegisterModal from './RegisterModule';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/init';
 import { signOut } from 'firebase/auth';
+import '../styles/buttons.css';
 
 const AuthButtons = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -51,12 +52,12 @@ const AuthButtons = () => {
             variant="outline-none"
             onClick={handleShowLoginModal}
             style={{
-              backgroundColor: 'var(--red-bg)',
+              backgroundColor: 'var(--color-ice-blue)',
               color: 'var(--font-wt)',
               fontWeight: '600',
             }}
             size="md"
-            id="login-btn"
+            className="auth-btn"
           >
             Login
           </Button>
@@ -64,12 +65,12 @@ const AuthButtons = () => {
             variant="outline-none"
             onClick={handleShowRegisterModal}
             style={{
-              backgroundColor: 'var(--red-bg)',
+              backgroundColor: 'var(--color-ice-blue)',
               color: 'var(--font-wt)',
               fontWeight: '600',
             }}
             size="md"
-            id="register-btn"
+            className="auth-btn"
           >
             Register
           </Button>
@@ -84,12 +85,12 @@ const AuthButtons = () => {
             variant="outline-none"
             onClick={handleLogout}
             style={{
-              backgroundColor: 'var(--red-bg)',
+              backgroundColor: 'var(--color-ice-blue)',
               color: 'var(--font-wt)',
               fontWeight: '600',
             }}
             size="md"
-            id="logout-btn"
+            className="auth-btn"
           >
             Logout
           </Button>

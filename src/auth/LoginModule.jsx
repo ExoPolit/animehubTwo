@@ -47,7 +47,7 @@ const LoginModule = ({ show, handleClose }) => {
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleLogin}>
+        <Button variant="danger" onClick={handleLogin}>
           Login
         </Button>
       </Modal.Footer>
