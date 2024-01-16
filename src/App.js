@@ -3,7 +3,7 @@ import './App.css';
 import React, {useState} from 'react';
 import { auth } from './firebase/init';
 import { onAuthStateChanged } from 'firebase/auth';
-import Home from './pages/Home';
+import Main from './pages/Main';
 
 function App() {
   const [user, setUser] = React.useState({});
@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Main />} />
         </Routes>
     </Router>
   );

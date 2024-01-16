@@ -4,7 +4,12 @@
   margin: 0;
   padding: 0;
 }
-
+body{
+  background-color: var(--color-bg-dark);
+  font-family: var(--main-font);
+  font-size: var(--font-size-medium);
+  color: var(--color-light-black);
+}
 :root {
   --main-font: "Roboto", sans-serif;
   --font-size-ultra: 62px;
@@ -15,4 +20,5 @@
   --color-light-dark-red: #862020;
   --color-light-black: #131212;
   --color-ice-blue: #13dadf;
+  --color-bg-dark: #242424;
 }
