@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
 import React, {useState} from 'react';
 import { auth } from './firebase/init';
 import { onAuthStateChanged } from 'firebase/auth';
