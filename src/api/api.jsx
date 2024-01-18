@@ -16,7 +16,7 @@ const ApiComponent = () => {
 
                 if (response.data) {
                     setData(response.data);
-                    console.log('Top Animes:', response.data.top);
+                    console.log('Top Animes:', response.data.data[1].title);
                 } else {
                     console.error('Invalid response structure:', response);
                 }
@@ -38,8 +38,8 @@ const ApiComponent = () => {
             ) : (
                 <div>
                     {data?.top?.slice(0, 4).map((anime) => (
-                        <div key={anime.mal_id} style={{ marginBottom: '20px', borderBottom: '1px solid #ddd' }}>
-                            <h2>{anime.title}</h2>
+                        <div key={data.mal_id} style={{ marginBottom: '20px', borderBottom: '1px solid #ddd' }}>
+                            <h2>{anime.data.title}</h2>
                             <img src={anime.image_url} alt={anime.title} style={{ maxWidth: '100%' }} />
                             <p>Type: {anime.type}</p>
                             <p>Episodes: {anime.episodes}</p>
