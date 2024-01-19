@@ -42,7 +42,7 @@ const MainCard = () => {
 
         // Sort by favorites (assuming favorites property exists in your data)
         result.data.sort((a, b) => b.favorites - a.favorites);
-
+console.log(result.data)
         setData(result.data);
         handleDataFetched(result.data);
       } catch (error) {

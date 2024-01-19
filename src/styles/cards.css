@@ -9,3 +9,33 @@
     transform: scale(1.04);
     transition: all 0.5s ease-in-out;
 }
+.card-text{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    color: white;
+    max-height: 150px;
+    transition: all 0.5s ease-in-out;
+}
+.card-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg-dark);
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+}
+.card-title{
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}

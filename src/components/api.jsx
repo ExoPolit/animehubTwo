@@ -4,42 +4,23 @@ import "../styles/cards.css";
 
 const ApiComponent = ({data, loading}) => {
 
+const [hoveredAnime, setHoveredAnime] = useState(null);
+
+const handleHover = (anime) => {
+  setHoveredAnime(anime);
+};
+const handleLeave = () => {
+  setHoveredAnime(null);
+};
+
 
   const styling = {
     display: "flex",
     marginTop: "2rem",
-    
   };
-const synopsisStyle = {
-  display: "-webkit-box",
-  overflow: "hidden",
-  WebkitLineClamp: "1",
-  textOverflow: "ellipsis",
-  whiteSpace: "normal",
-  WebkitBoxOrient: "vertical",
-  color: "white",
-}
-const titleStyle = {
-  color: "white",
-whiteSpace: "nowrap",
-overflow: "hidden",
-textOverflow: "ellipsis",
-}
-const cardStyling = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent:"space-between",
-  alignItems:"center",
-}
-const cardContentStyling = {
-  padding: "20px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  alignItems: "center",
-  backgroundColor: "var(--color-bg-dark)",
-  
-}
+
+
+
 
   return (
 
@@ -56,12 +37,14 @@ const cardContentStyling = {
                   col-md-6 
                   col-sm-6 
                   col-xs"
+                  onMouseEnter={() => handleHover(anime)}
+                  onMouseLeave={handleLeave}
                   >
-                  <div className="cards" style={cardStyling}>
-                    <div className="col-9" style={{ width:"400px"}}>
+                  <div className="cards">
+                    <div className="col-10">
                       <div className="card card-wrapper">
-                        <div className="card-content" style={cardContentStyling}>
-                        <p className="card-title" style={titleStyle}>
+                        <div className="card-content" >
+                        <p className="card-title" style={{color:"white"}}>
                           {anime.title}
                         </p>
                           <figure>
@@ -72,10 +55,10 @@ const cardContentStyling = {
                               alt="anime"
                             />
                           </figure>
-                          <p className="card-text" style={synopsisStyle}>
+                          <p className="card-text" >
                             {anime.synopsis}
                           </p>
-                          <button className="btn btn-primary">Read More</button>
+                          <div style={{color:"white"}}> Rank: {anime.rank}</div>
                         </div>
                       </div>
                     </div>
@@ -83,6 +66,20 @@ const cardContentStyling = {
                 </div>
               ))}
             </div>
+            {hoveredAnime && (
+              <div className="trailer-container">
+                <p>Trailer for {hoveredAnime.title}</p>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={hoveredAnime.trailer_url}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
+              </div>
+              )
+              }
           </div>
         )}
       </div>
