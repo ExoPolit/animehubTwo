@@ -59,27 +59,30 @@ const handleLeave = () => {
                             {anime.synopsis}
                           </p>
                           <div style={{color:"white"}}> Rank: {anime.rank}</div>
+                          
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {hoveredAnime && (
+                      {hoveredAnime && (
               <div className="trailer-container">
                 <p>Trailer for {hoveredAnime.title}</p>
                 <iframe
-                  width="560"
-                  height="315"
-                  src={hoveredAnime.trailer_url}
+                  width="200"
+                  height="150"
+                  src={hoveredAnime.trailer.embed_url}
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
               </div>
               )
               }
+                    </div>
+                  </div>
+                </div>
+                
+              ))}
+            </div>
+            
           </div>
         )}
       </div>
