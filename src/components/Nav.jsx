@@ -12,7 +12,7 @@ const Nav = () => {
         backgroundPosition: "100% 40%",
         backgroundRepeat: "no-repeat",
         height: "20rem",
-        width: "100dvw",
+       
     };
     const navStyle = {
         display: "flex",

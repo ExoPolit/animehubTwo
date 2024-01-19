@@ -1,0 +1,18 @@
+#search-bar{
+    width: 50%;
+    font-size: var(--font-size-md);
+    border: none;
+    border-radius: 50px;
+    margin-right: 1rem;
+}
+#search-bar:focus{
+    transform: scale(1.04);
+    transition: all 0.5s ease-in-out;
+}
+#search-bar:focus-visible{
+    outline: none;
+}
+#search-bar::placeholder{
+    color: var(--color-light-black);
+    font-weight: 500;
+}

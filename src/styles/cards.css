@@ -1,0 +1,11 @@
+.card-wrapper{
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    
+}
+.card-wrapper:hover{
+    transform: scale(1.04);
+    transition: all 0.5s ease-in-out;
+}

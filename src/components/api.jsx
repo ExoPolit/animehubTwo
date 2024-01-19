@@ -1,67 +1,78 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import "../styles/cards.css";
 
-const ApiComponent = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
+const ApiComponent = ({data, loading}) => {
 
-        const response = await axios.get("https://api.jikan.moe/v4/top/anime");
 
-        // Konsolenausgabe der gesamten API-Antwort
-        console.log("API Response:", response);
-
-        if (response.data) {
-          setData(response.data?.data);
-        } else {
-          console.error("Invalid response structure:", response);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const sysnopsisStyle = {
-    whtieSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    textAlign: "left",
+  const styling = {
+    display: "flex",
+    marginTop: "2rem",
+    
   };
+const synopsisStyle = {
+  display: "-webkit-box",
+  overflow: "hidden",
+  WebkitLineClamp: "1",
+  textOverflow: "ellipsis",
+  whiteSpace: "normal",
+  WebkitBoxOrient: "vertical",
+  color: "white",
+}
+const titleStyle = {
+  color: "white",
+whiteSpace: "nowrap",
+overflow: "hidden",
+textOverflow: "ellipsis",
+}
+const cardStyling = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent:"space-between",
+  alignItems:"center",
+}
+const cardContentStyling = {
+  padding: "20px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "center",
+  backgroundColor: "var(--color-bg-dark)",
+  
+}
 
   return (
-    <div>
-      <h1>Top 4 Animes</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="container">
-          {(Array.isArray(data) ? data : []).slice(0,10).map((anime) => (
-            <div
-              key={anime.mal_id}
-              style={{ marginBottom: "20px", borderBottom: "1px solid #ddd" }}
-            >
-              <div className="container text-center">
-                <div className="cards " style={{width:'50%'}}>
-                  <div className="row">
-                    <div className="col">
-                      <div className="card">
-                        <div className="card-content">
-                          <h1 className="card-title">{anime.title}</h1>
-                          <img
-                            src={anime.images.jpg.image_url}
-                            style={{ width: "15rem" }}
-                            alt="anime"
-                          />
-                          <p className="card-text" style={sysnopsisStyle}>
+
+    <>
+      <div className="container">
+              {data && data.length > 0 && (
+          <div style={styling}>
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+              {data.slice(1, 10).map((anime) => (
+                <div
+                  key={anime.mal_id}
+                  className="col-lg-4 
+                  text-center 
+                  col-md-6 
+                  col-sm-6 
+                  col-xs"
+                  >
+                  <div className="cards" style={cardStyling}>
+                    <div className="col-9" style={{ width:"400px"}}>
+                      <div className="card card-wrapper">
+                        <div className="card-content" style={cardContentStyling}>
+                        <p className="card-title" style={titleStyle}>
+                          {anime.title}
+                        </p>
+                          <figure>
+                            <img
+                            height={300}
+                              src={anime.images.jpg.image_url}
+                              className="card-img-top"
+                              alt="anime"
+                            />
+                          </figure>
+                          <p className="card-text" style={synopsisStyle}>
                             {anime.synopsis}
                           </p>
                           <button className="btn btn-primary">Read More</button>
@@ -70,12 +81,12 @@ const ApiComponent = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
-    </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

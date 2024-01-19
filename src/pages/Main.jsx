@@ -1,19 +1,24 @@
 import Nav from "../components/Nav";
-import Search from "../components/Search";
+import MainCard from "../components/Cards";
 import "../styles/main.css";
-import axios from "axios";
-import { useEffect } from "react";
 import ApiComponent from "../components/api";
 
 const Main = () => {
 
+    const mainStyling = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        backgroundColor: "var(--color-bg-dark)",
+        color: "var(--font-wt)",
+    };
+    
 
     return (
-        <div id="main">
+        <div id="main" style={mainStyling}>
             <Nav />
-            <Search />
-            <h1>Home</h1>
             <ApiComponent />
+            <MainCard />
         </div>
     );
 }
