@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ApiComponent from "./api";
+import ApiComponent from "./DisplayAnime";
 import Search from "./Search";
 
 const MainCard = () => {
@@ -8,6 +8,7 @@ const MainCard = () => {
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const [filterType, setFilterType] = useState("all"); // Default value for the filter
 
   const handleDataFetched = (data) => {
     setData(data);
@@ -21,7 +22,6 @@ const MainCard = () => {
       const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}`);
       const result = response.data;
 
-      // Sort by favorites (assuming favorites property exists in your data)
       result.data.sort((a, b) => b.favorites - a.favorites);
 
       setSearchResults(result.data);
@@ -32,17 +32,19 @@ const MainCard = () => {
     }
   }
 
+  const handleFilterChange = (e) => {
+    setFilterType(e.target.value);
+  }
+
   useEffect(() => {
-    // Fetch initial data on mount
     const fetchData = async () => {
       try {
         setLoading(true);
         const response = await axios.get("https://api.jikan.moe/v4/anime");
         const result = response.data;
-
-        // Sort by favorites (assuming favorites property exists in your data)
+console.log(result.data);	
         result.data.sort((a, b) => b.favorites - a.favorites);
-console.log(result.data)
+
         setData(result.data);
         handleDataFetched(result.data);
       } catch (error) {
@@ -53,13 +55,25 @@ console.log(result.data)
     };
 
     fetchData();
-  }, []); // Call just on mount
+  }, []); 
 
   return (
     <div>
-      <Search onSearch={handleSearch} />
       {showLoading && <div>Loading...</div>}
-      <ApiComponent data={searchResults.length > 0 ? searchResults : data} loading={loading} />
+      {!showLoading && (
+        <>
+        <div className="d-flex align-items-center justify-content-center">
+          <Search onSearch={handleSearch} />
+          <label htmlFor="filterType">Filter by Type:</label>
+          <select id="filterType" value={filterType} onChange={handleFilterChange}>
+            <option value="all">All</option>
+            <option value="Movie">Movie</option>
+            <option value="TV">TV</option>
+          </select>
+          </div>
+          <ApiComponent data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} />
+        </>
+      )}
     </div>
   );
 };

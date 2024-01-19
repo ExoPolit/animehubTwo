@@ -39,3 +39,13 @@
     font-weight: 500;
     margin-bottom: 1rem;
 }
+.trailer-content{
+    transition: all 0.5s ease-in-out;
+}
+.anime-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
