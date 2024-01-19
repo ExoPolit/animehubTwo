@@ -62,7 +62,7 @@ const handleLeave = () => {
                           
                         </div>
                       </div>
-                      {hoveredAnime && (
+                      {/* {hoveredAnime && (
               <div className="trailer-container">
                 <p>Trailer for {hoveredAnime.title}</p>
                 <iframe
@@ -75,7 +75,7 @@ const handleLeave = () => {
                 ></iframe>
               </div>
               )
-              }
+              } */}
                     </div>
                   </div>
                 </div>
