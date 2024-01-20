@@ -73,7 +73,7 @@ const MainCard = ({anime,  data, loading,  filterType, setFilterType }) => {
                             {anime.title}
                           </p>
                                   
-                          <figure onMount={filterTrailer}>
+                          <figure>
                             <img
                               height={400}
                               src={anime.images.jpg.image_url}
