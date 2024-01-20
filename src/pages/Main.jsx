@@ -1,8 +1,7 @@
 import Nav from "../components/Nav";
-import MainCard from "../components/Cards";
+import ApiComponent from "../components/Api";
 import Footer from "../components/Footer";
 import "../styles/main.css";
-import ApiComponent from "../components/DisplayAnime";
 
 const Main = () => {
 
@@ -18,7 +17,7 @@ const Main = () => {
     return (
         <div id="main" style={mainStyling}>
             <Nav />
-            <MainCard />
+            <ApiComponent />
             <Footer />
         </div>
     );

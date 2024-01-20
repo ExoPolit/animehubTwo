@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ApiComponent from "./DisplayAnime";
 import Search from "./Search";
+import MainCard from "./DisplayAnime"; // Importiere die MainCard
 
-const MainCard = () => {
+const ApiComponent = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -22,7 +22,7 @@ const MainCard = () => {
       const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}`);
       const result = response.data;
 
-      result.data.sort((a, b) => b.favorites - a.favorites);
+      result.data.sort((a, b) => b.type - a.type);
 
       setSearchResults(result.data);
     } catch (error) {
@@ -33,17 +33,18 @@ const MainCard = () => {
   }
 
   const handleFilterChange = (e) => {
-    setFilterType(e.target.value);
+    setFilterType(e.target.value.data);
   }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("https://api.jikan.moe/v4/anime");
+        const response = await axios.get(`https://api.jikan.moe/v4/anime`);
         const result = response.data;
-console.log(result.data);	
-        result.data.sort((a, b) => b.favorites - a.favorites);
+        console.log(result.data);
+
+        result.data.sort((a, b) => b - a);
 
         setData(result.data);
         handleDataFetched(result.data);
@@ -62,20 +63,16 @@ console.log(result.data);
       {showLoading && <div>Loading...</div>}
       {!showLoading && (
         <>
-        <div className="d-flex align-items-center justify-content-center">
-          <Search onSearch={handleSearch} />
-          <label htmlFor="filterType">Filter by Type:</label>
-          <select id="filterType" value={filterType} onChange={handleFilterChange}>
-            <option value="all">All</option>
-            <option value="Movie">Movie</option>
-            <option value="TV">TV</option>
-          </select>
+          <div className="">
+            <Search onSearch={handleSearch} />
+            {/* Übergebe die Daten und den Filtertyp an die MainCard */}
+            <MainCard data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} setFilterType={setFilterType} />
+
           </div>
-          <ApiComponent data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} />
         </>
       )}
     </div>
   );
 };
 
-export default MainCard;
+export default ApiComponent;

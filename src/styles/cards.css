@@ -1,9 +1,7 @@
 .card-wrapper{
-    border: none;
-    border-radius: 9999px;
+    border: 1px solid var(--color-ice-blue);
+    border-radius: 5rem;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    
 }
 .card-wrapper:hover{
     transform: scale(1.04);
@@ -27,12 +25,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-bg-dark);
+    transition: all 0.5s ease-in-out;
 }
 .cards{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     align-items:center;
+    transition: all 0.5s ease-in-out;
 }
 .card-title{
     font-size: var(--font-size-md);
@@ -46,6 +46,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin-bottom: 1rem;
 }

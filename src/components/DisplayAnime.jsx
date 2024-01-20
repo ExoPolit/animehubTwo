@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import "../styles/cards.css";
+import React, { useState, useEffect } from "react";
+import '../styles/cards.css';
 
-const ApiComponent = ({ data, loading }) => {
+const MainCard = ({ data, loading,  filterType, setFilterType }) => {
   const [hoveredAnime, setHoveredAnime] = useState(null);
-  const [selectedType, setSelectedType] = useState("all");
 
   const handleHover = (anime) => {
     setHoveredAnime(anime);
@@ -13,34 +12,41 @@ const ApiComponent = ({ data, loading }) => {
     setHoveredAnime(null);
   };
 
-  const handleTypeChange = (event) => {
-    setSelectedType(event.target.value);
+  const filterDataByType = (anime) => {
+    if (filterType === "all") {
+      return true;
+    } else {
+      return anime.type.toLowerCase() === filterType.toLowerCase();
+    }
   };
 
-  const filteredData = data?.filter((anime) => {
-    if (selectedType === "all") {
-      return true; // Zeige alle Animes, wenn "all" ausgewählt ist
-    } else {
-      return anime.type.toLowerCase() === selectedType.toLowerCase();
-    }
-  });
+  const sortedData = data
+    .filter(filterDataByType)
+    .sort((a, b) => {
+      if (filterType === "all") {
+        return 0;
+      } else {
+        return a.type.localeCompare(b.type);
+      }
+    });
 
-  const sortedData = filteredData?.slice(1, 10).sort((a, b) => {
-    if (a.type === "Movie" && b.type === "TV") {
-      return -1;
-    } else if (a.type === "TV" && b.type === "Movie") {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+  const handleFilterChange = (event) => {
+    setFilterType(event.target.value);
+  };
 
   return (
     <>
       <div className="container">
+        <div>
+        <select value={filterType} onChange={handleFilterChange}>
+          <option value="all">All</option>
+          <option value="movie">Movie</option>
+          <option value="tv">Series</option>
+        </select>
+        </div>
         {sortedData && sortedData.length > 0 && (
           <div style={{ display: "flex", marginTop: "2rem" }}>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4" >
               {sortedData.map((anime) => (
                 <div
                   key={anime.mal_id}
@@ -48,9 +54,9 @@ const ApiComponent = ({ data, loading }) => {
                   onMouseEnter={() => handleHover(anime)}
                   onMouseLeave={handleLeave}
                 >
-                  <div className="cards">
-                    <div className="col-10">
-                      <div className="card card-wrapper">
+                  <div className="cards" >
+                    <div className="col" >
+                      <div className="card-wrapper">
                         <div className="card-content">
                           <p className="card-title" style={{ color: "white" }}>
                             {anime.title}
@@ -63,12 +69,12 @@ const ApiComponent = ({ data, loading }) => {
                               alt="anime"
                             />
                           </figure>
-                          <p className="card-text">{anime.synopsis}</p>
-                          <div className="anime-info"style={{ color: "white" }}>
-                            <p>Episodes: {anime.episodes}</p>
-                          
-                            <p>Aired: {anime.aired.string}</p>
+                          <div className="" style={{ color: "white", display:"flex", flexDirection:"column"}}>
+                           <h3> Episodes: {anime.episodes}</h3>
+                           <h3> Rank: {anime.rank}</h3>
                           </div>
+                          <p className="card-text">{anime.synopsis}</p>
+                         
                           {hoveredAnime && hoveredAnime === anime && (
                             <div className="trailer-container">
                               <p>Trailer for {hoveredAnime.title}</p>
@@ -77,13 +83,14 @@ const ApiComponent = ({ data, loading }) => {
                                 <iframe
                                   width="300"
                                   height="250"
+                                  
                                   src={hoveredAnime.trailer.embed_url}
                                   title="YouTube video player"
                                   frameBorder="0"
                                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                 ></iframe>
                               ) : (
-                                <p style={{color:"white"}}>No Trailer Available</p>
+                                <p style={{ color: "white" }}>No Trailer Available</p>
                               )}
                             </div>
                           )}
@@ -101,4 +108,4 @@ const ApiComponent = ({ data, loading }) => {
   );
 };
 
-export default ApiComponent;
+export default MainCard;
