@@ -1,16 +1,20 @@
 .card-wrapper{
-    border: 1px solid var(--color-ice-blue);
-    border-radius: 5rem;
+    border: 3px  solid var(--color-ice-blue);
+    border-radius: 5rem 8rem 8rem 5rem;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 .card-wrapper:hover{
+    border-color: var(--color-light-dark-red);
+    border-radius: 2rem;
     transform: scale(1.04);
     transition: all 0.5s ease-in-out;
 }
+
 .card-text{
     display: -webkit-box;
     overflow: hidden;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     text-overflow: ellipsis;
     white-space: normal;
     -webkit-box-orient: vertical;
@@ -24,6 +28,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+   
     background-color: var(--color-bg-dark);
     transition: all 0.5s ease-in-out;
 }
@@ -34,11 +39,7 @@
     align-items:center;
     transition: all 0.5s ease-in-out;
 }
-.card-title{
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
+
 .trailer-content{
     transition: all 0.5s ease-in-out;
 }
@@ -47,4 +48,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+}
+.trailer-container iframe{
+    height: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-wrapper:hover .trailer-container iframe{
+    height: 250px;
+    transition: all 0.5s ease-in-out;
 }

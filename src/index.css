@@ -21,5 +21,4 @@ body{
   background-color: var(--color-bg-dark);
   font-family: var(--main-font);
   font-size: var(--font-size-md);
-  color: var(--color-light-black);
 }

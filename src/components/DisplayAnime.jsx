@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/cards.css';
 
-const MainCard = ({ data, loading,  filterType, setFilterType }) => {
+const MainCard = ({anime,  data, loading,  filterType, setFilterType }) => {
   const [hoveredAnime, setHoveredAnime] = useState(null);
 
   const handleHover = (anime) => {
@@ -34,6 +34,16 @@ const MainCard = ({ data, loading,  filterType, setFilterType }) => {
     setFilterType(event.target.value);
   };
 
+  const filterTrailer = (anime) => {
+    if (anime.trailer.embed_url) {
+      return true;
+    } else {
+      return <p> No Trailer Available</p>;
+    }
+  };
+
+  
+
   return (
     <>
       <div className="container">
@@ -53,47 +63,45 @@ const MainCard = ({ data, loading,  filterType, setFilterType }) => {
                   className="col-lg-4 text-center col-md-6 col-sm-6 col-xs"
                   onMouseEnter={() => handleHover(anime)}
                   onMouseLeave={handleLeave}
+                  style={{transition: "hoveredAnime 0.5s ease-in-out"}}
                 >
                   <div className="cards" >
                     <div className="col" >
                       <div className="card-wrapper">
                         <div className="card-content">
-                          <p className="card-title" style={{ color: "white" }}>
+                          <p className="card-title" style={{color:"white", fontSize: "var(--font-size-lg)", margin:"2rem"}}>
                             {anime.title}
                           </p>
-                          <figure>
+                                  
+                          <figure onMount={filterTrailer}>
                             <img
-                              height={300}
+                              height={400}
                               src={anime.images.jpg.image_url}
-                              className="card-img-top"
+                              className="card-img"
                               alt="anime"
                             />
                           </figure>
-                          <div className="" style={{ color: "white", display:"flex", flexDirection:"column"}}>
-                           <h3> Episodes: {anime.episodes}</h3>
-                           <h3> Rank: {anime.rank}</h3>
-                          </div>
+                           <p style={{color:"wheat", fontSize:"var(--font-size-lg)"}} > Episodes:<span style={{border:"1px solid white",borderRadius:"4rem", color:"white", display:"flex", justifyContent:"center", marginTop:"1rem"}}> {anime.episodes} </span></p>
+                           
+                          
                           <p className="card-text">{anime.synopsis}</p>
                          
-                          {hoveredAnime && hoveredAnime === anime && (
+                          {anime.trailer && anime.trailer.embed_url ? (
                             <div className="trailer-container">
-                              <p>Trailer for {hoveredAnime.title}</p>
-                              {hoveredAnime.trailer &&
-                              hoveredAnime.trailer.embed_url ? (
-                                <iframe
-                                  width="300"
-                                  height="250"
-                                  
-                                  src={hoveredAnime.trailer.embed_url}
-                                  title="YouTube video player"
-                                  frameBorder="0"
-                                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                                ></iframe>
-                              ) : (
-                                <p style={{ color: "white" }}>No Trailer Available</p>
-                              )}
+                            <iframe
+                              width="300"
+                              height="250"
+                              src={anime.trailer.embed_url}
+                              title="YouTube video player"
+                              frameBorder="0"
+                              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                            ></iframe>
                             </div>
+                          ) : (
+                            <p style={{ color: "white" }}>No Trailer Available</p>
                           )}
+                         
+                  
                         </div>
                       </div>
                     </div>
