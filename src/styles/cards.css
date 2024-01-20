@@ -1,6 +1,6 @@
 .card-wrapper{
     border: 3px  solid var(--color-ice-blue);
-    border-radius: 5rem 8rem 8rem 5rem;
+    border-radius: 7em;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
