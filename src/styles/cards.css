@@ -2,6 +2,7 @@
     border: 3px  solid var(--color-ice-blue);
     border-radius: 7em;
     cursor: pointer;
+    
     transition: all 0.5s ease-in-out;
 }
 .card-wrapper:hover{
@@ -9,6 +10,9 @@
     border-radius: 2rem;
     transform: scale(1.04);
     transition: all 0.5s ease-in-out;
+}
+.card-shadow{
+    box-shadow: 1px 4px 8px rgba(0,0,0,1);
 }
 
 .card-text{
@@ -23,6 +27,7 @@
     transition: all 0.5s ease-in-out;
 }
 .card-content{
+    
     padding: 20px;
     display: flex;
     flex-direction: column;

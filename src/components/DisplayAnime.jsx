@@ -53,7 +53,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                   onMouseLeave={handleLeave}
                   style={{ transition: "hoveredAnime 0.5s ease-in-out" }}
                 >
-                  <div className="cards">
+                  <div className="cards card-shadow">
                     <div className="col">
                       <div className="card-wrapper">
                         <div className="card-content">
