@@ -1,6 +1,7 @@
 import AuthButtons from "../auth/AuthButtons";
 import { Container } from "react-bootstrap";
 import AnimeHubV2_logo from "../images/AnimeHubV2_logo.png";
+import "../styles/nav.css";
 
 
 
@@ -23,7 +24,7 @@ const Nav = () => {
     const buttonStyle = {
         marginTop: "1rem"
     }
-    
+    const animehubLink = "https://exopolit.github.io/anime/"
    
     return (
         
@@ -34,9 +35,13 @@ const Nav = () => {
             <img src={logo} alt="logo" width={150}  style={{borderRadius:"10rem"}} />
         </figure>
         </div>
+        <div className="container link-container">
+            <a href={animehubLink} className="links">Original</a>
+            <a href={animehubLink} className="links">Welcome</a>
+            
+            </div>
         <div style={buttonStyle} >
             <AuthButtons  />
-
         </div>
             </div>
        </Container>

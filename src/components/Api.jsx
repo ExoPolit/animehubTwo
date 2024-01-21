@@ -33,7 +33,7 @@ const ApiComponent = () => {
   }
 
   const handleFilterChange = (e) => {
-    setFilterType(e.target.value.data);
+    setFilterType(e.target.value);
   }
 
   useEffect(() => {

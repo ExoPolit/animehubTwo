@@ -24,9 +24,9 @@ const Search = ({ onSearch }) => {
 
   return (
     <div className="container mt-2 search-container">
-      <form className="d-flex justify-content-center" role="search" onSubmit={handleSubmit}>
+      <form name="form" className="d-flex justify-content-center" role="search" onSubmit={handleSubmit}>
         <input
-        id="search-bar"
+         id="search-bar"
           className="form-control "
           type="search"
           placeholder="Search"

@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { auth } from './firebase/init';
 import { onAuthStateChanged } from 'firebase/auth';
 import Main from './pages/Main';
 import './index.css';
 
 function App() {
-  const [user, setUser] = React.useState({});
+  const [user, setUser] = useState({});
 
-  React.useEffect(() => {
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);

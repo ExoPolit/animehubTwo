@@ -1,0 +1,27 @@
+.link-container{
+    height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+}
+.link-container a{
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.links{
+    color: var(--color-ice-blue);
+    text-shadow: 2px 2px 2px #111010;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 5rem;
+}
+.links:hover{
+    background-color: var(--color-bg-dark);
+    padding: 4px;
+    border: 1px solid red;
+    border-style: none solid solid dotted;
+    border-radius: 1rem 5rem 4rem 2rem;
+    transform: scale(1.04);
+
+}

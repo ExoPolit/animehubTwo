@@ -13,11 +13,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
   };
 
   const filterDataByType = (anime) => {
-    if (filterType === "all") {
-      return true;
-    } else {
-      return anime.type.toLowerCase() === filterType.toLowerCase();
-    }
+    return filterType === "all" || anime.type.toLowerCase() === filterType.toLowerCase();
   };
 
   const sortedData = data.filter(filterDataByType).sort((a, b) => {
@@ -33,11 +29,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
   };
 
   const filterTrailer = (anime) => {
-    if (anime.trailer.embed_url) {
-      return true;
-    } else {
-      return <p> No Trailer Available</p>;
-    }
+    return anime.trailer && anime.trailer.embed_url;
   };
 
   return (
