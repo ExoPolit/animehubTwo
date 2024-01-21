@@ -37,7 +37,7 @@ const Nav = () => {
         </div>
         <div className="container link-container">
             <a href={animehubLink} className="links">Original</a>
-            <a href={animehubLink} className="links">Original</a>
+            <a href="/Welcome" className="links">Welcome</a>
             </div>
         <div style={buttonStyle} >
             <AuthButtons  />

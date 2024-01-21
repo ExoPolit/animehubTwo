@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { auth } from './firebase/init';
 import { onAuthStateChanged } from 'firebase/auth';
 import Main from './pages/Main';
+import Welcome from './pages/Welcome';
 import './index.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/Welcome' element={<Welcome />} />
         </Routes>
     </Router>
   );
