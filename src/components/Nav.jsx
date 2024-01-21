@@ -1,11 +1,12 @@
 import AuthButtons from "../auth/AuthButtons";
 import { Container } from "react-bootstrap";
+import AnimeHubV2_logo from "../images/AnimeHubV2_logo.png";
 
 
 
 const Nav = () => {
     const backgroundImageUrl = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20130226005246%2Fhoradeaventura%2Fes%2Fimages%2Fd%2Fd6%2FCcca.jpg&f=1&nofb=1&ipt=b420c177946befb83d29d311a7db0a00e9059e54ee7f027d328617a5e482c476&ipo=images";
-    const logo = "/images/AnimeHubV2_logo.png";
+    const logo = AnimeHubV2_logo;
     // Styling 
     const imageStyle = {
         backgroundImage: `url(${backgroundImageUrl})`,
@@ -32,9 +33,9 @@ const Nav = () => {
         
        <Container fluid style={imageStyle}>
         <div style={navStyle}>
-            <div className="d-flex align-items-center justify-content-center">
-        <figure>
-            <img src={logo} alt="logo"  />
+            <div className="d-flex align-items-center justify-content-center mt-2">
+        <figure >
+            <img src={logo} alt="logo" width={150}  style={{borderRadius:"10rem"}} />
         </figure>
         <h1 style={titleStyle}>AnimeHub V2</h1>
         </div>
