@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Search from "./Search";
-import MainCard from "./DisplayAnime"; // Importiere die MainCard
+import MainCard from "./DisplayAnime"; 
 
 const ApiComponent = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
-  const [filterType, setFilterType] = useState("all"); // Default value for the filter
+  const [filterType, setFilterType] = useState("all"); 
 
   const handleDataFetched = (data) => {
     setData(data);
@@ -63,9 +63,8 @@ const ApiComponent = () => {
       {showLoading && <div>Loading...</div>}
       {!showLoading && (
         <>
-          <div className="">
+          <div>
             <Search onSearch={handleSearch} />
-            {/* Übergebe die Daten und den Filtertyp an die MainCard */}
             <MainCard data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} setFilterType={setFilterType} />
 
           </div>

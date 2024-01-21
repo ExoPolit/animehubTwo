@@ -29,6 +29,7 @@ const LoginModule = ({ show, handleClose }) => {
               value={loginData.email}
               onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
               placeholder="Enter email"
+              name='email'
             />
           </Form.Group>
 
@@ -39,6 +40,7 @@ const LoginModule = ({ show, handleClose }) => {
               value={loginData.password}
               onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
               placeholder="Password"
+              name='password'
             />
           </Form.Group>
         </Form>
