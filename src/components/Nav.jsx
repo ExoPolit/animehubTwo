@@ -1,6 +1,6 @@
 import AuthButtons from "../auth/AuthButtons";
 import { Container } from "react-bootstrap";
-import AnimeHubV2_logo from "../images/AnimeHubV2_logo.png";
+import AnimeHubV2_logo from "../img/AnimeHubV2_logo.png";
 import "../styles/nav.css";
 
 
@@ -37,8 +37,8 @@ const Nav = () => {
         </div>
         <div className="container link-container">
             <a href={animehubLink} className="links">Original</a>
-            <a href={animehubLink} className="links">Welcome</a>
-            
+            <a href={animehubLink} className="links">Original</a>
+            <a href={animehubLink} className="links">Original</a>
             </div>
         <div style={buttonStyle} >
             <AuthButtons  />
