@@ -23,11 +23,7 @@ const Nav = () => {
     const buttonStyle = {
         marginTop: "1rem"
     }
-    const titleStyle = {
-        color: "white",
-        fontWeight: "bold",
-        marginLeft: "1rem",
-    };
+    
    
     return (
         
@@ -37,7 +33,6 @@ const Nav = () => {
         <figure >
             <img src={logo} alt="logo" width={150}  style={{borderRadius:"10rem"}} />
         </figure>
-        <h1 style={titleStyle}>AnimeHub V2</h1>
         </div>
         <div style={buttonStyle} >
             <AuthButtons  />
