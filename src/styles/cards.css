@@ -58,3 +58,31 @@
     height: 250px;
     transition: all 0.5s ease-in-out;
 }
+.select{
+    position: absolute;
+    right: 0;
+    top: -4rem;
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
+    outline: auto;
+    outline-color: blue;
+    
+}
+
+@media (max-width: 768px){
+    .select{
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 50%;
+        transform: translate(-50%, 40%);
+    }
+    
+}
+@media (max-width:468px) {
+    .select{
+        display: none;
+    }
+    
+}

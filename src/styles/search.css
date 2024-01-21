@@ -1,5 +1,10 @@
+.search-container{
+    position: relative;
+}
+
 #search-bar{
     width: 50%;
+ padding: 8px 16px;
     font-size: var(--font-size-md);
     border: none;
     border-radius: 50px;
@@ -16,3 +21,4 @@
     color: var(--color-light-black);
     font-weight: 500;
 }
+

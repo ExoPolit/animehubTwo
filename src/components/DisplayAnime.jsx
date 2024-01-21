@@ -43,8 +43,8 @@ const MainCard = ({ data, filterType, setFilterType }) => {
   return (
     <>
       <div className="container">
-        <div>
-          <select value={filterType} onChange={handleFilterChange}>
+        <div style={{position: "relative"}}>
+          <select value={filterType} onChange={handleFilterChange} className="select">
             <option value="all">All</option>
             <option value="movie">Movie</option>
             <option value="tv">Series</option>
