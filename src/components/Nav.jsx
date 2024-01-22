@@ -33,13 +33,14 @@ const Nav = () => {
         <div style={navStyle}>
             <div className="d-flex align-items-center justify-content-center mt-2">
         <figure >
-            <img src={logo} alt="logo" width={150}  style={{borderRadius:"10rem"}} />
+            <img src={logo} alt="logo" width={100}  style={{borderRadius:"10rem", margin:".8rem .5rem 0 1rem"}} />
         </figure>
-        </div>
         <div className="container link-container">
             <a href={animehubLink} className="links">Original</a>
             <a href="/Welcome" className="links">Welcome</a>
             </div>
+        </div>
+       
         <div style={buttonStyle} >
             <AuthButtons  />
         </div>

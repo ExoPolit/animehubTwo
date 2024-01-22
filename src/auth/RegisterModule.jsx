@@ -55,8 +55,7 @@ const RegisterModule = ({ show, handleClose }) => {
       </Modal.Header>
       <Modal.Body>
         <Form id="form">
-          <Form.Group controlId="formName">
-            <Form.Label>Name</Form.Label>
+          <Form.Group controlId="formName" className="mb-3">
             <Form.Control
               type="text"
               placeholder="Enter your name"
@@ -66,8 +65,7 @@ const RegisterModule = ({ show, handleClose }) => {
             />
           </Form.Group>
 
-          <Form.Group controlId="formEmail">
-            <Form.Label>Email address</Form.Label>
+          <Form.Group controlId="formEmail" className="mb-3">
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -77,8 +75,7 @@ const RegisterModule = ({ show, handleClose }) => {
             />
           </Form.Group>
 
-          <Form.Group controlId="formPassword">
-            <Form.Label>Password</Form.Label>
+          <Form.Group controlId="formPassword" className="mb-3">
             <Form.Control
               type="password"
               placeholder="Enter password"
@@ -90,10 +87,10 @@ const RegisterModule = ({ show, handleClose }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose} style={{backgroundColor:"var(--color-bg-dark-op)"}}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleRegister}>
+        <Button variant="none" onClick={handleRegister} style={{backgroundColor:"var(--color-ice-blue)", fontWeight:"500"}}>
           Register
         </Button>
       </Modal.Footer>

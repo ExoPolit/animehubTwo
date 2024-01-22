@@ -23,7 +23,6 @@ const LoginModule = ({ show, handleClose }) => {
       <Modal.Body>
         <Form id="form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email:</Form.Label>
             <Form.Control
               type="email"
               value={loginData.email}
@@ -34,7 +33,6 @@ const LoginModule = ({ show, handleClose }) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
               value={loginData.password}
@@ -46,10 +44,10 @@ const LoginModule = ({ show, handleClose }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose} style={{backgroundColor:"var(--color-bg-dark-op)"}}>
           Close
         </Button>
-        <Button variant="danger" onClick={handleLogin}>
+        <Button variant="none" onClick={handleLogin} style={{backgroundColor:"var(--color-ice-blue)", fontWeight:"500"}}>
           Login
         </Button>
       </Modal.Footer>

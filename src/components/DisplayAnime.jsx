@@ -60,8 +60,9 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                           <p
                             className="card-title"
                             style={{
-                              color: "white",
+                              color: "var(--color-ice-blue)",
                               fontSize: "var(--font-size-md)",
+                              fontWeight: "600",
                               margin: "1rem",
                             }}
                           >
@@ -78,12 +79,12 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                           </figure>
                           <p
                             style={{
-                              color: "wheat",
-                              fontSize: "var(--font-size-lg)",
+                              color: "white",
+                              fontSize: "var(--font-size-md)",
                             }}
                           >
                             {" "}
-                            Episodes:
+                            Episode
                             <span
                               style={{
                                 border: "1px solid white",
@@ -92,6 +93,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                                 display: "flex",
                                 justifyContent: "center",
                                 marginTop: "1rem",
+                                fontSize: "var(--font-size-lg)",
                               }}
                             >
                               {" "}
