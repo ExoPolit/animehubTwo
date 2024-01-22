@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/cards.css";
 
 const MainCard = ({ data, filterType, setFilterType }) => {
@@ -61,8 +61,8 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                             className="card-title"
                             style={{
                               color: "white",
-                              fontSize: "var(--font-size-lg)",
-                              margin: "2rem",
+                              fontSize: "var(--font-size-md)",
+                              margin: "1rem",
                             }}
                           >
                             {anime.title}

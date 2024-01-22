@@ -21,7 +21,7 @@ const LoginModule = ({ show, handleClose }) => {
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
+        <Form id="form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
             <Form.Control

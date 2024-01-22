@@ -54,7 +54,7 @@ const RegisterModule = ({ show, handleClose }) => {
         <Modal.Title>Register</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
+        <Form id="form">
           <Form.Group controlId="formName">
             <Form.Label>Name</Form.Label>
             <Form.Control
