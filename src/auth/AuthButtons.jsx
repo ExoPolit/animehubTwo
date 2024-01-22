@@ -44,7 +44,7 @@ const AuthButtons = () => {
   };
 
   return (
-    <div id="auth-btn">
+    <div id="auth-btn" className='container-lg'>
       {!loading &&!user && (
         <>
         

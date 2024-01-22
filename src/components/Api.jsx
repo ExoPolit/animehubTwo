@@ -10,6 +10,8 @@ const ApiComponent = () => {
   const [showLoading, setShowLoading] = useState(true);
   const [filterType, setFilterType] = useState("all"); 
 
+
+
   const handleDataFetched = (data) => {
     setData(data);
     setLoading(false);
@@ -66,7 +68,6 @@ const ApiComponent = () => {
           <div>
             <Search onSearch={handleSearch} />
             <MainCard data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} setFilterType={setFilterType} />
-
           </div>
         </>
       )}

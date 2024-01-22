@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CardInformation from "./CardInfo";
 import "../styles/cards.css";
 
 const MainCard = ({ data, filterType, setFilterType }) => {
@@ -32,6 +33,12 @@ const MainCard = ({ data, filterType, setFilterType }) => {
     return anime.trailer && anime.trailer.embed_url;
   };
 
+  const cardOnClick = (anime) => {
+    if (filterTrailer(anime)) {
+      console.log("Clicked on card");
+      console.log(`<div>${anime.trailer.embed_url}</div>`);}
+  };
+
   return (
     <>
       <div className="container">
@@ -51,6 +58,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                   className="col-lg-4 text-center col-md-6 col-sm-6 col-xs"
                   onMouseEnter={() => handleHover(anime)}
                   onMouseLeave={handleLeave}
+                  onClick={() => cardOnClick(anime)}
                   style={{ transition: "hoveredAnime 0.5s ease-in-out" }}
                 >
                   <div className="cards card-shadow">
