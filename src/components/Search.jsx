@@ -13,17 +13,17 @@ const Search = ({ onSearch }) => {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      onSearch(query); // Führen Sie die Suchfunktion aus, wenn Enter gedrückt wird
+      onSearch(query);
     }
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Verhindern Sie das Standardformularverhalten
-    onSearch(query); // Führen Sie die Suchfunktion aus
+    e.preventDefault(); 
+    onSearch(query);
   }
 
   return (
-    <div className="container mt-2 search-container">
+    <div className="container  search-container">
       <form name="form" className="d-flex justify-content-center" role="search" onSubmit={handleSubmit}>
         <input
          id="search-bar"
