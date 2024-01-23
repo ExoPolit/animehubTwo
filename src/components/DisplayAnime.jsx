@@ -51,18 +51,18 @@ const MainCard = ({ data, filterType, setFilterType }) => {
         </div>
         {sortedData && sortedData.length > 0 && (
           <div style={{ display: "flex", marginTop: "2rem" }}>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-4  g-4">
               {sortedData.map((anime) => (
                 <div
                   key={anime.mal_id}
-                  className="col-lg-4 text-center col-md-6 col-sm-6 col-xs"
+                  className="col-lg-4 text-center col-md-6 col-sm-12 col-xs"
                   onMouseEnter={() => handleHover(anime)}
                   onMouseLeave={handleLeave}
                   onClick={() => cardOnClick(anime)}
                   style={{ transition: "hoveredAnime 0.5s ease-in-out" }}
                 >
                   <div className="cards card-shadow">
-                    <div className="col">
+                    <div className="col col-sm-12">
                       <div className="card-wrapper">
                         <div className="card-content">
                           <p

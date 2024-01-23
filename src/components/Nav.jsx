@@ -2,6 +2,7 @@ import AuthButtons from "../auth/AuthButtons";
 import { Container } from "react-bootstrap";
 import AnimeHubV2_logo from "../img/AnimeHubV2_logo.png";
 import "../styles/nav.css";
+import Hamburger from "./Hamburger";
 
 
 
@@ -30,6 +31,7 @@ const Nav = () => {
     return (
         
        <Container fluid style={imageStyle}>
+        <Hamburger />
         <div style={navStyle}>
             <div className="d-flex align-items-center justify-content-center mt-2">
         <figure >
@@ -41,7 +43,7 @@ const Nav = () => {
             </div>
         </div>
        
-        <div style={buttonStyle} >
+        <div className="auth-btn" style={buttonStyle} >
             <AuthButtons  />
         </div>
             </div>

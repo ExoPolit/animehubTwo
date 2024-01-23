@@ -8,7 +8,7 @@ import './index.css';
 
 function App() {
   const [user, setUser] = useState({});
-
+  document.cookie= "cookieName=cookieValue; SameSite=Strict; Secure";
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

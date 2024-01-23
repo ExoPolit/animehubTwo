@@ -43,8 +43,12 @@ const AuthButtons = () => {
     console.log("logged out");
   };
 
+  const cookie = () => {
+    document.cookie = "name=cookie SameSite=None Secure";
+  }
+
   return (
-    <div id="auth-btn" className='container-lg'>
+    <div id="auth-btn">
       {!loading &&!user && (
         <>
         
@@ -97,7 +101,7 @@ const AuthButtons = () => {
         </>
       )}
 
-      <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal} />
+      <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal} cookie />
       <RegisterModal show={showRegisterModal} handleClose={handleCloseRegisterModal} />
     </div>
   );

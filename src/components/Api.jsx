@@ -10,6 +10,29 @@ const ApiComponent = () => {
   const [showLoading, setShowLoading] = useState(true);
   const [filterType, setFilterType] = useState("all"); 
 
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`https://api.jikan.moe/v4/anime`);
+        const result = response.data;
+        console.log(result.data);
+
+        result.data.sort((a, b) => b - a);
+
+        setData(result.data);
+        handleDataFetched(result.data);
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
 
 
   const handleDataFetched = (data) => {
@@ -37,28 +60,6 @@ const ApiComponent = () => {
   const handleFilterChange = (e) => {
     setFilterType(e.target.value);
   }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(`https://api.jikan.moe/v4/anime`);
-        const result = response.data;
-        console.log(result.data);
-
-        result.data.sort((a, b) => b - a);
-
-        setData(result.data);
-        handleDataFetched(result.data);
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []); 
 
   return (
     <div>

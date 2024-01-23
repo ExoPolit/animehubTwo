@@ -1,5 +1,6 @@
-import Naruto from "../videos/Naruto.mp4";
+import GaiVKakashi from "../videos/GaiVKakashi.mp4";
 import "../styles/buttons.css";
+import "../styles/welcome.css";
 
 const mainStyles = {
   backgroundColor: "var(--color-bg-dark)",
@@ -31,12 +32,13 @@ const Welcome = () => {
       <div className="container-fluid text-center mb-5">
         <p>Feel Free to watch one of my Favorite fights from Boruto! </p>
         <iframe
-          src={Naruto}
-          frameborder="0"
+        className="my-5 video-player"
+          src={GaiVKakashi}
+          frameBorder="0"
           width={1500}
           height={500}
           style={iFrameStyles}
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
         ></iframe>
       </div>
       <p>You will notice that i used diffrent styling methods such as:</p>

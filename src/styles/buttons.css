@@ -1,5 +1,5 @@
 .auth-btn{
-    display: flex;
+    display: block;
     margin: 8px;
 }
 .auth-btn:hover{
@@ -23,8 +23,8 @@
     background-color:black;
 }
 
-@media(max-width: 468px){
-    .search_btn{
+@media(max-width: 550px){
+    .auth-btn{
         display: none;
     }
    
