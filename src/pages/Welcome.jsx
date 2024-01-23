@@ -4,7 +4,7 @@ import "../styles/welcome.css";
 
 const mainStyles = {
   backgroundColor: "var(--color-bg-dark)",
-  height: "100vh",
+ 
   color: "white",
 };
 const iFrameStyles = {
@@ -19,20 +19,18 @@ const btnStyles = {
 };
 const Welcome = () => {
   return (
-    <div className="container-fluid text-center " style={mainStyles}>
+        <div className="text-center" style={mainStyles} >
       <h1>Welcome Mitri</h1>
       <button className="m-4 welcome-btn" style={btnStyles}>
         <a
-          href="/"
+          href="/Main"
           style={{ textDecoration: "none", fontSize: "var(--font-size-lg)" }}
         >
           Go to Main
         </a>
       </button>
-      <div className="container-fluid text-center mb-5">
-        <p>Feel Free to watch one of my Favorite fights from Boruto! </p>
         <iframe
-        className="my-5 video-player"
+          className="my-5 video-player"
           src={GaiVKakashi}
           frameBorder="0"
           width={1500}
@@ -40,14 +38,27 @@ const Welcome = () => {
           style={iFrameStyles}
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
         ></iframe>
+      <div>
+        <h1> Auth with Firebase</h1>
+        <p>
+          Authentication works just fine. <br /> SignIn, LogIn and SignOut all
+          work properly.
+        </p>
+        <p>
+          However since i ran into Cookie issues, and gettin over 200-(peak)3k
+          warnings, after you did search for a Anime or just a letter, u should
+          not click on LogIn or Register, i noticed that it can cause the issue
+          to freeze the site and ull have to reload.
+        </p>
       </div>
-      <p>You will notice that i used diffrent styling methods such as:</p>
+      <h2>Styling Methods:</h2>
       <ul style={{ listStyle: "none" }}>
         <li>Inline Styling</li>
         <li>Styling with CSS</li>
         <li>Styling with Bootstrap</li>
         <li>Styling with React-Bootstrap</li>
       </ul>
+    
     </div>
   );
 };

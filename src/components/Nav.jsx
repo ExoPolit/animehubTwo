@@ -39,7 +39,7 @@ const Nav = () => {
         </figure>
         <div className="container link-container">
             <a href={animehubLink} className="links">Original</a>
-            <a href="/Welcome" className="links">Welcome</a>
+            <a href="/" className="links">Welcome</a>
             </div>
         </div>
        

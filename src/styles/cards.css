@@ -90,14 +90,14 @@
 
 
 
-@media (min-width: 768px){
+@media (min-width: 768px) and (max-width: 991px){
     .select{
       right: -1rem;
         top: -4.3rem;
     }
     
 }
-@media (max-width:600px) {
+@media (max-width:550px) {
     .select{
         display: none;
     }

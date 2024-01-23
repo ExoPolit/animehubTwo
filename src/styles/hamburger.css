@@ -1,10 +1,9 @@
 .btn__menu{
     background-color: transparent;
-    font-size: 32px;
     text-align: center;
     border: none;
-    color: #f94d49;
-    display: block;
+    color: var(--color-ice-blue);
+    display: none;
   }
   
   .menu__backdrop{
@@ -24,7 +23,6 @@
   }
   
   .menu--open .menu__backdrop{
-    
     visibility: visible; 
     opacity: 1;
     z-index: 100;
@@ -39,6 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
   
   .menu__list{
@@ -48,8 +47,18 @@
   .menu__link{
     font-size: 32px;
     color: white;
+    text-decoration: none;
+
+  }
+  .menu__list:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
   }
   
+  .menu__link:hover{
+    color: var(--color-ice-blue);
+    transition: all 0.5s ease-in-out;
+  }
   
   
   .btn__menu--close{
@@ -63,8 +72,10 @@
     .btn__menu{
       display: block;
       position: absolute;
-      top: 1rem;
+      top:22.4em;
       right: 1rem;
+      z-index: 100;
     }
+  
   }
   

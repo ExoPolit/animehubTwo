@@ -2,9 +2,9 @@ import Nav from "../components/Nav";
 import ApiComponent from "../components/Api";
 import Footer from "../components/Footer";
 import "../styles/main.css";
-import Welcome from "./Welcome";
 
 const Main = () => {
+    
 
     const mainStyling = {
         display: "flex",

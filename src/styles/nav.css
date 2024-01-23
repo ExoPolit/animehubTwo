@@ -5,7 +5,7 @@
     align-items: center;
     margin: 1rem 0;
     gap: 2rem;
-    display: block;
+    visibility: visible;
 }
 .link-container a{
     text-decoration: none;
@@ -23,8 +23,8 @@
     background-color: var(--color-bg-dark);
     padding: 4px;
     border: 1px solid red;
-    border-style: none solid solid dotted;
-    border-radius: 1rem 5rem 4rem 2rem;
+    border-style: none solid none solid;
+    border-radius: 1rem 2rem 2rem 1rem;
     transform: scale(1.04);
 
 }

@@ -36,11 +36,11 @@ else{
         <div className="container">
             <div className="hamburger">
                 <button className="btn__menu" onClick={openMenu}>
-                <FontAwesomeIcon icon={faBars} style={{fontSize:'var(--font-size-lg)'}}  />
+                <FontAwesomeIcon icon={faBars} style={{fontSize:'var(--font-size-big)'}}  />
                 </button>
                 <div className="menu__backdrop" >
                     <button className="btn__menu btn__menu--close" onClick={closeMenu} >
-                    <FontAwesomeIcon icon={faTimes} style={{fontSize:'var(--font-size-lg)'}}  />
+                    <FontAwesomeIcon icon={faTimes} style={{fontSize:'var(--font-size-big)'}}  />
                     </button>
                     <ul className="menu__links">
                         <li className="menu__list">
