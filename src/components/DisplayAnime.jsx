@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import CardInformation from "./CardInfo";
+import AnimeDetails from "./AnimeDetails";
 import "../styles/cards.css";
 
 const MainCard = ({ data, filterType, setFilterType }) => {
   const [hoveredAnime, setHoveredAnime] = useState(null);
+  const [selectedAnime, setSelectedAnime] = useState(null);
 
   const handleHover = (anime) => {
     setHoveredAnime(anime);
@@ -37,6 +38,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
     if (filterTrailer(anime)) {
       console.log("Clicked on card");
       console.log(`<div>${anime.trailer.embed_url}</div>`);}
+    setSelectedAnime(anime);
   };
 
   return (
@@ -134,6 +136,10 @@ const MainCard = ({ data, filterType, setFilterType }) => {
                 </div>
               ))}
             </div>
+            {selectedAnime && (
+              <AnimeDetails anime={selectedAnime} />
+            )
+            }
           </div>
         )}
       </div>

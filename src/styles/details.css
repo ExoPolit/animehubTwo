@@ -1,0 +1,27 @@
+.selected-wraper{
+    position: relative;
+    border: 1px solid #ccc;
+    
+}
+
+.selected{
+    position: absolute;
+    max-width: 750px;
+    max-height: 700px;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: var(--color-bg-dark);
+    color: rgb(255, 255, 255)
+    
+}
+@media (max-width: 550px){
+    .selected{
+        max-width: fit-content;
+        max-height: fit-content;
+        z-index: 1;
+    }
+}
