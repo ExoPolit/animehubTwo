@@ -45,7 +45,7 @@ else{
                     <ul className="menu__links">
                         <li className="menu__list">
                             <a
-                                href="/Welcome"
+                                href="/"
                                 className="menu__link"
                                 onClick={(closeMenu, toggleModal)}
                             >
