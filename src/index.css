@@ -6,6 +6,7 @@
   --font-size-big: 32px;
   --font-size-lg: 24px;
   --font-size-md: 18px;
+  --font-size-detail: 16px;
   --font-size-sm: 12px;
   --color-green: #03975c;
   --color-light-dark-red: #862020;
@@ -18,9 +19,11 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
+
   background-color: var(--color-bg-dark);
   font-family: var(--main-font);
   font-size: var(--font-size-md);

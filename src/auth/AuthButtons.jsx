@@ -101,7 +101,7 @@ const AuthButtons = () => {
         </>
       )}
 
-      <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal} cookie />
+      <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal}  />
       <RegisterModal show={showRegisterModal} handleClose={handleCloseRegisterModal} />
     </div>
   );

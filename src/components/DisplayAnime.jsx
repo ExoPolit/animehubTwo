@@ -35,12 +35,11 @@ const MainCard = ({ data, filterType, setFilterType }) => {
   };
 
   const cardOnClick = (anime) => {
-    if (filterTrailer(anime)) {
-      console.log("Clicked on card");
-      console.log(`<div>${anime.trailer.embed_url}</div>`);}
-    setSelectedAnime(anime);
+      setSelectedAnime(anime);
   };
-
+const closeDetails = () => {
+  setSelectedAnime(null);
+}
   return (
     <>
       <div className="container">
@@ -137,7 +136,7 @@ const MainCard = ({ data, filterType, setFilterType }) => {
               ))}
             </div>
             {selectedAnime && (
-              <AnimeDetails anime={selectedAnime} />
+              <AnimeDetails anime={selectedAnime} onClose={closeDetails}/>
             )
             }
           </div>
