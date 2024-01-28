@@ -16,7 +16,7 @@ const Main = () => {
     
 
     return (
-        <div id="main" style={mainStyling}>
+        <div id="main" style={mainStyling} >
             <Nav />
             <ApiComponent />
             <Footer />

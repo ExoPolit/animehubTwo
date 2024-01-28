@@ -1,42 +1,66 @@
+#card-wrapper{
+position: absolute;
+left: 50%;
+transform: translate(-50%);
+}
+.card {
+    width: 1200;
+    height: 800px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 2rem;
+    opacity: 0.8;
+    transition: all .3s;
+   }
+   
+   .card2 {
+    width: 1200px;
+    height: 800px;
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 6rem;
+    transition: all .4523s;
+   }
+   .card2 img{
+    object-fit: cover;
+    border-radius: 6rem;
 
+   }
+  
+   .card:hover{
+    opacity: 1;
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transform: scale(1);
+    border-radius: 20px;
+   }
+   .card:hover .card2 {
+    opacity: 1;
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transform: scale(.997);
+    border-radius: 20px;
+    animation: color 1s infinite;
+   }
 
-.selected{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 1000px;;
-    margin: 0 auto;
-    background-color: var(--color-bg-dark);
-    color: rgb(255, 255, 255);
-    transform: translateX(-100%);
-    transition: all 0.5s ease-in-out;
-}
-.slide-in{
-    transform: translateX(0);
-    transition: all 0.5s ease-in-out;
-}
-.close{
-    position: absolute;
-    top: 3rem;
-    right: 4rem;
-    font-size: var(--font-size-ultra);
-    color: var(--color-ice-blue);
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-}
-.close:hover{
-    color: var(--color-light-dark-red);
-}
+   .card_para{
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+   }
+   .details-text{
+    max-width: 850px;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    font-weight: 500;
+    text-align:left;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+   }
+   
 @media (max-width: 550px){
-    .selected{
-        max-width: 350px;
-        max-height: fit-content;
-        z-index: 101;
+    #card-wrapper{
+       display: none;
     }
-    .selected-text{
-        font-size: var(--font-size-detail);
-    }
+   
 }

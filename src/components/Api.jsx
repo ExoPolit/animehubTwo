@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Search from "./Search";
 import MainCard from "./DisplayAnime"; 
+import Hamburger from "./Hamburger";
 
 const ApiComponent = () => {
   const [data, setData] = useState([]);
@@ -66,10 +67,9 @@ const ApiComponent = () => {
       {showLoading && <div>Loading...</div>}
       {!showLoading && (
         <>
-          <div>
             <Search onSearch={handleSearch} />
+        <Hamburger />
             <MainCard data={searchResults.length > 0 ? searchResults : data} loading={loading} filterType={filterType} setFilterType={setFilterType} />
-          </div>
         </>
       )}
     </div>

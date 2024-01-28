@@ -5,47 +5,43 @@ import "../styles/details.css";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const AnimeDetails = ({ anime, onClose }) => {
- const [isVissible, setIsVissible] = useState(false);
+  const [isVissible, setIsVissible] = useState(false);
 
- useEffect(() => {
-  setTimeout(() => {
-    setIsVissible(true);
-
-
-  }, 500); 
-}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVissible(true);
+    }, 500);
+  }, []);
 
   return (
-      <div className={`selected ${isVisible ? "slide-in" : ""}`}>
-        <div className="open">
-              <FontAwesomeIcon icon={faTimes} className="close" onClick={onClose} />
-        <div className="row  mb-2">
-          <div className="d-flex align-items-center">
-        <img className="col-2 m-4" src={anime.images.jpg.image_url} alt="" width={200}/>
-        <h2 className="col-md">{anime.title}</h2>
-        <iframe
-          src={anime.trailer.embed_url}
-          frameBorder="0"
-          className="col-lg-4 m-5"
-          width={250}
-          height={250}
-        ></iframe>
+    <div
+      className={`details ${isVissible ? "is-visible" : ""} `}
+      id="card-wrapper"
+    >
+      <div className="card">
+        <FontAwesomeIcon onClick={onClose} icon={faTimes} className="close" />
+        <div className="card2 text-center">
+          <h1>{anime.title_japanese}</h1>
+          <div className="d-flex justify-content-around align-items-center">
+            <img src={anime.images.jpg.image_url} alt="anime" />
+            <div className="d-flex flex-column align-items-start card_para">
+            <p>Episodes: {anime.episodes}</p>
+            <p>Type: {anime.type}</p>
+            <p>Genre: {anime.genres[0].type}</p>
+            </div>
+            <iframe
+              width="300"
+              height="250"
+              src={anime.trailer.embed_url}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            ></iframe>
           </div>
-         
-        <p className="col-2"> Type: {anime.type}</p>
-        <p className="col-2"> Episodes: {anime.episodes}</p>
-        <p className="col-2"> Genre:<span style={{textTransform:"capitalize"}}> {anime.genres[0].type} </span></p>
-        </div>
-        <div className="row mb-2">
-        <p className="selected-text col-lg-12">{anime.synopsis}</p>
-        </div>
-        <div className="row">
-            <div className="col-lg-12">
-        
+          <p className="details-text">{anime.synopsis}</p>
 
-    </div>
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
   );
 };

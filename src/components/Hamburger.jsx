@@ -58,9 +58,7 @@ else{
                             </a>
                         </li>
                         <li className="menu__list">
-                            <a href={projectsLink} className="menu__link" onClick={closeMenu}>
-                               My Projects
-                            </a>
+                           
                         </li>
                        
             <AuthButtons />
