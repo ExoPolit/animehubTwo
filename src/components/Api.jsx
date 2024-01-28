@@ -18,7 +18,6 @@ const ApiComponent = () => {
         setLoading(true);
         const response = await axios.get(`https://api.jikan.moe/v4/anime`);
         const result = response.data;
-        console.log(result.data);
 
         result.data.sort((a, b) => b - a);
 

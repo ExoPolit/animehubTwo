@@ -13,11 +13,12 @@ transform: translate(-50%);
    }
    
    .card2 {
+    margin: .5rem;
     width: 1200px;
     height: 800px;
     color: white;
-    background-color: #1a1a1a;
-    border-radius: 16rem;
+    background-color: var(--color-bg-dark-op);
+    border-radius: 4rem;
     transition: all .4523s;
    }
    .card2 img{
