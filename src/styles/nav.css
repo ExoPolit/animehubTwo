@@ -23,12 +23,13 @@
     background-color: var(--color-bg-dark);
     padding: 4px;
     border: 1px solid red;
-    border-style: none solid none solid;
-    border-radius: 1rem 2rem 2rem 1rem;
-    transform: scale(1.04);
+    border-radius: 1rem;
+    transform: scale(1.1);
 
 }
-
+.links:active{
+    transform: scale(0.9);
+}
 @media (max-width:550px){
     .link-container
     {
