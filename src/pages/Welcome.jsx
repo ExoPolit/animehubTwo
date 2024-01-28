@@ -27,41 +27,7 @@ const paraStyles = {
 const Welcome = () => {
   return (
         <div className="d-flex flex-column align-items-center text-center" style={mainStyles} >
-      <h1>Welcome Mitri</h1>
-    
-        <iframe
-          className="my-5 video-player"
-          src={GaiVKakashi}
-          frameBorder="0"
-          width={500}
-          height={300}
-          style={iFrameStyles}
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
-        ></iframe>
-      <div>
-        <h1> Auth with Firebase</h1>
-        <p style={paraStyles}>
-          Authentication works just fine. <br /> SignIn, LogIn and SignOut all
-          work properly.
-        </p>
-        <p style={paraStyles}>
-          However since i ran into Cookie issues, and gettin over 200-(peak)3k
-          warnings,
-           <br />
-          after you did search for a Anime or just a letter, u should
-          not click on LogIn or Register,
-          <br/>
-           i noticed that it can cause the issue
-          to freeze the site and ull have to reload.
-        </p>
-      </div>
-      <h2>Styling Methods:</h2>
-      <ul style={{ listStyle: "none" }}>
-        <li>Inline Styling</li>
-        <li>Styling with CSS</li>
-        <li>Styling with Bootstrap</li>
-        <li>Styling with React-Bootstrap</li>
-      </ul>
+      <h1 className="m-4">Welcome Mitri</h1>
       <button className="m-4 welcome-btn" style={btnStyles}>
         <a
           href="/Main"
@@ -70,6 +36,34 @@ const Welcome = () => {
           Go to Main
         </a>
       </button>
+      <p>Scene From Naruto:</p>
+        <iframe
+          className="my-5 mt-0 video-player"
+          src={GaiVKakashi}
+          frameBorder="0"
+          width={500}
+          height={300}
+          style={iFrameStyles}
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
+        ></iframe>
+      <div>
+       <h1>Some Informations:</h1>
+       <ul>
+        <li> Detailed Card is deactivated on Smaller Devices.</li>
+        <li> For testing LogIn use: email@email.com  // test123</li>
+        <li> Third-Party cookies are gettin very high , couldnt solve why.<br/> Believe that the Trailers are causing that.</li>
+       </ul>
+       
+     
+      <h2>Styling Methods:</h2>
+      <p style={paraStyles}>I was playing around with diffrent styling methods to check what works best. At least for me^^</p>
+      <ul>
+        <li>Inline Styling</li>
+        <li>Styling with CSS</li>
+        <li>Styling with Bootstrap</li>
+        <li>Styling with React-Bootstrap</li>
+      </ul>
+      </div>
     </div>
   );
 };
